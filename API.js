@@ -7,7 +7,7 @@ window.onload=function() {
     var btn = document.getElementById('btn');
     var main= document.getElementById('main');
     var temp= document.getElementById('temp');
-    btn.onclick = function () {
+    btn.onclick = function () { 
         console.log(input.value);
         var URL = new XMLHttpRequest();
         var map = new XMLHttpRequest();
