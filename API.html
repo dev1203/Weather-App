@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+
+</head>
+<style>
+#style{
+    padding-left: 400px;
+
+}
+   .in{
+       padding-top: 100px;
+   }
+    .temp{
+        font-family: 'Roboto', sans-serif;
+        padding-left: 30px;
+    }
+</style>
+<div id="style">
+    <div class="in">
+        <h4>Enter City Name to Check Weather   </h4>
+<!--<input type="text" id="city">-->
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="city" type="text" class="validate">
+                <label class="active" for="first_name2">Enter Here</label>
+                <button id="btn">Search</button>
+            </div>
+        </div>
+    </div>
+    <p id="temp" style="font-size: 50px;padding-left: 90px;"> </p>
+<div id="main">
+
+</div>
+
+</div>
+<script src="API.js"></script>
+
+</body>
+</html>
