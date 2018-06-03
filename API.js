@@ -11,8 +11,8 @@ window.onload=function() {
         console.log(input.value);
         var URL = new XMLHttpRequest();
         var map = new XMLHttpRequest();
-        URL.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+input.value+'&APPID=24250869cf79a167ca0be1b857666ce0&units=metric', false);
-        map.open("GET",' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjwwQqFBZ6Q1YYtg8GTXSwg_yJmEZySdI&callback=initMap">')
+        URL.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+input.value+'&APPID&units=metric', false);
+        map.open("GET",' src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap">')
         URL.send(null);
         var r = JSON.parse(URL.response);
         temp.innerHTML+=(r.main.temp+'<span>'+'&#8451'+'</span>'+'</br>');
