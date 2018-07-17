@@ -8,20 +8,28 @@ window.onload=function() {
     var main= document.getElementById('main');
     var temp= document.getElementById('temp');
     btn.onclick = function () { 
-        console.log(input.value);
-        var URL = new XMLHttpRequest();
-        var map = new XMLHttpRequest();
-        URL.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+input.value+'&APPID&units=metric', false);
-        map.open("GET",' src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap">')
-        URL.send(null);
-        var r = JSON.parse(URL.response);
-        temp.innerHTML+=(r.main.temp+'<span>'+'&#8451'+'</span>'+'</br>');
-        main.innerHTML+=("Humidity:" + r.main.humidity+'</br>');
-        main.innerHTML+=("Location:" + r.main.name+'</br>');
-        main.innerHTML+=("Minimum Temperature:" + r.main.temp_min+'</br>');
-        main.innerHTML+=("Maximum Temperature:" + r.main.temp_max+'</br>');
-        main.innerHTML+=("Wind Speed:" + r.wind.speed+'</br>');
-       console.log(r);
+    	get_weather()
+    	.then((res)=>{
+    		console.log(res);
+    	})
+    	.catch((error)=>{
+    		console.log(error);
+    	})
     }
+
+	function get_weather(url){
+  		return new Promise((resolve, reject) => {
+    		var URL = new XMLHttpRequest();
+        	URL.open("GET", 'http://api.openweathermap.org/data/2.5/weather?q='+input.value+'&APPID=24250869cf79a167ca0be1b857666ce0&units=metric', false);
+        	var a=URL.send(null);
+        	var r = JSON.parse(URL.response);
+        	if(r.cod==200){
+        		resolve(r);
+        	}
+    		else{
+    			reject(false);
+    		}
+  		});
+	}
 };
 
