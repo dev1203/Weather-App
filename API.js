@@ -8,13 +8,13 @@ window.onload=function() {
     var main= document.getElementById('main');
     var temp= document.getElementById('temp');
     btn.onclick = function () { 
-    	get_weather()
-    	.then((res)=>{
-    		console.log(res);
-    	})
-    	.catch((error)=>{
-    		console.log(error);
-    	})
+    	driver_function().
+        then((res)=>{
+            console.log(res);
+        })
+        .catch((error)=>{
+            console.log(error);
+        });
     }
 
 	function get_weather(url){
@@ -31,5 +31,9 @@ window.onload=function() {
     		}
   		});
 	}
+    async function driver_function(){
+        const results = get_weather();
+        return results;
+    }
 };
 
